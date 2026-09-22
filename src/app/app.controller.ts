@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-// import { AppService } from './app.service';
+import { AppService } from './app.service';
 
 @Controller('home') // /home
 export class AppController {
-  // constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) {}
 
   // Método da solicitação -> Ler (read) -> CRUD
   // /home/hello
@@ -11,5 +11,10 @@ export class AppController {
   getHello(): string {
     // return this.appService.getHello();
     return 'Qualquer coisa';
+  }
+
+  @Get('exemplo')
+  exemplo() {
+    return this.appService.solucionaExemplo();
   }
 }
