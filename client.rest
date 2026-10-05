@@ -1,26 +1,34 @@
 @baseUrl = http://localhost:3000
 
 # RECADOS
-GET {{baseUrl}}/recados
+GET {{baseUrl}}/recados/
 ###
-GET {{baseUrl}}/recados/30
+GET {{baseUrl}}/recados/200/
+###
+POST {{baseUrl}}/recados/
+Content-Type: application/json
+
+{
+    "recado": "Este é o recado que estou enviando.",
+    "nova chave": "outro valor"
+}
 
 ### AppControllerGetHello
 
 # @name AppControllerGetHello
-GET {{baseUrl}}/home/hello
+GET {{baseUrl}}/home/hello/
 
 ### ExemploDeRota
 
 # @name ExemploDeRota
-GET {{baseUrl}}/home/exemplo
+GET {{baseUrl}}/home/exemplo/
 
 ### ConceitosManualControllerHome
 
 # @name ConceitosManualControllerHome
-GET {{baseUrl}}/conceitos-manual
+GET {{baseUrl}}/conceitos-manual/
 
 ### ConceitosAutomaticoControllerHome
 
 # @name ConceitosAutomaticoControllerHome
-GET {{baseUrl}}/conceitos-automatico
+GET {{baseUrl}}/conceitos-automatico/
