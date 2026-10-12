@@ -3,6 +3,8 @@
 # RECADOS
 ### Lista todos os recados
 GET {{baseUrl}}/recados/
+?limit=200
+&offset=230
 ### Lista apenas um recado
 GET {{baseUrl}}/recados/200/
 ### Cria um recado
@@ -11,7 +13,7 @@ Content-Type: application/json
 
 {
     "recado": "Este é o recado que estou enviando.",
-    "nova chave": "outro valor"
+    "novaChave": "outro valor"
 }
 ### Atualiza um recado
 PATCH {{baseUrl}}/recados/1/
