@@ -20,18 +20,17 @@ export class RecadosController {
   @Get()
   findAll(@Query() pagination: { limit: string; offset: string }) {
     const { limit = 10, offset = 10 } = pagination;
-    return this.recadosService.hello();
-    return `Essa rota retorna todos os recados. Limit=${limit}, Offset=${offset}`;
+    return this.recadosService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return `Essa rota retorna o recado ID ${id}`;
+    return this.recadosService.findOne(id);
   }
 
   @Post()
-  create(@Body() body: { recado: string; novaChave: string }) {
-    return body;
+  create(@Body() body: any) {
+    return this.recadosService.create(body);
   }
 
   @Patch(':id')
@@ -39,14 +38,11 @@ export class RecadosController {
     @Param('id') id: string,
     @Body() body: { recado: string; atualizar: boolean },
   ) {
-    return {
-      id,
-      ...body,
-    };
+    return this.recadosService.update(id, body);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return `Essa rota APAGA o recado ID ${id}`;
+    return this.recadosService.remove(id);
   }
 }
