@@ -5,8 +5,10 @@
 GET {{baseUrl}}/recados/
 ?limit=200
 &offset=230
+
 ### Lista apenas um recado
 GET {{baseUrl}}/recados/2/
+
 ### Cria um recado
 POST {{baseUrl}}/recados/
 Content-Type: application/json
@@ -18,6 +20,7 @@ Content-Type: application/json
     "lido": false,
     "data": "2026-10-19T17:59:20.246Z"
 }
+
 ### Atualiza um recado
 PATCH {{baseUrl}}/recados/2/
 Content-Type: application/json
@@ -29,8 +32,10 @@ Content-Type: application/json
     "lido": false,
     "data": "2026-10-19T17:59:20.246Z"
 }
+
 ### Apaga um recado
 DELETE {{baseUrl}}/recados/2/
+
 
 ### AppControllerGetHello
 
